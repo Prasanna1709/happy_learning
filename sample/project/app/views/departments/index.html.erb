@@ -1,0 +1,28 @@
+<h1> Listing departments </h1>
+<div>
+<%= link_to 'Create Department' , new_department_path %>
+</div>
+<br>
+<br>
+<table>
+  <thead>
+    <tr>
+      <th class="text-right" width="30%"> Department Id</th>
+      <th class="text-right" width="30%"> Department Name  </th>
+      <th class="text-right" width="30%"> Actions</th>
+    </tr>
+  </thead>
+  <body>
+    <% @departments.each do |department| %>
+      <tr>
+        <td style="text-align:center"><%= department.dept_unique_id %></td>
+        <td style="text-align:center"><%= department.department_name %></td>
+        <td style="text-align:center"><%= link_to 'View', department %></td>
+        <td style="text-align:right"><%= link_to 'Edit', edit_department_path(department) %></td>
+        <td style="text-align:right">
+          <%= link_to 'Delete', department, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </body>
+</table>

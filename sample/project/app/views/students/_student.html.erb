@@ -1,0 +1,14 @@
+<%= simple_form_for @student do |f| %>
+  <%= f.input :name, label: 'Name:'%>
+  <br>
+  <%= f.input :email, label: 'Email:' %>
+  <br>
+  <%= f.input :roll_number, label: 'Roll Number:' %>
+  <br>
+  <%= f.input :dob, label: 'Date of birth:' %>
+  <br>
+  <%= f.input :contact, label: 'Contact:' %>
+  <br>
+  <%= f.button :submit, :value => 'create student', class: "btn btn-default btn-primary" %>
+<% end %>
+
